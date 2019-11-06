@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191104 13:08:50.023" rpa="false">
+<suite id="s1" name="Tests" source="C:\Development\RobotScripts\OSTest\Tests">
+<suite id="s1-s1" name="OSTesting" source="C:\Development\RobotScripts\OSTest\Tests\OSTesting.robot">
+<test id="s1-s1-t1" name="Create Some Directories">
+<kw name="Create Base Directory" library="OSTestingApp">
+<kw name="Create Directory" library="OperatingSystem">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.076" level="INFO" html="yes">Directory '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs"&gt;C:\Development\RobotScripts\OSTest\Outputs&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.075" endtime="20191104 13:08:50.076"></status>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.077" level="INFO" html="yes">Path '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs"&gt;C:\Development\RobotScripts\OSTest\Outputs&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.076" endtime="20191104 13:08:50.077"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.075" endtime="20191104 13:08:50.077"></status>
+</kw>
+<kw name="Create Directory 1" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+</arguments>
+<assign>
+<var>${directory_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.078" level="INFO">${directory_path} = Outputs\first_directory</msg>
+<status status="PASS" starttime="20191104 13:08:50.077" endtime="20191104 13:08:50.078"></status>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${directory_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.078" level="INFO" html="yes">Directory '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\first_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\first_directory&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.078" endtime="20191104 13:08:50.079"></status>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${directory_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.079" level="INFO" html="yes">Path '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\first_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\first_directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.079" endtime="20191104 13:08:50.079"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.077" endtime="20191104 13:08:50.079"></status>
+</kw>
+<kw name="Create Directory 2" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+</arguments>
+<assign>
+<var>${directory_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.080" level="INFO">${directory_path} = Outputs\second_directory</msg>
+<status status="PASS" starttime="20191104 13:08:50.079" endtime="20191104 13:08:50.080"></status>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${directory_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.080" level="INFO" html="yes">Directory '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\second_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\second_directory&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.080" endtime="20191104 13:08:50.081"></status>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${directory_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.081" level="INFO" html="yes">Path '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\second_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\second_directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.081" endtime="20191104 13:08:50.081"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.079" endtime="20191104 13:08:50.081"></status>
+</kw>
+<kw name="Create Directory 3" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_3}</arg>
+</arguments>
+<assign>
+<var>${directory_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.082" level="INFO">${directory_path} = Outputs\third_directory</msg>
+<status status="PASS" starttime="20191104 13:08:50.082" endtime="20191104 13:08:50.082"></status>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${directory_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.083" level="INFO" html="yes">Directory '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\third_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\third_directory&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.083" endtime="20191104 13:08:50.083"></status>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${directory_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.084" level="INFO" html="yes">Path '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\third_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\third_directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.084" endtime="20191104 13:08:50.084"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.082" endtime="20191104 13:08:50.084"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.074" endtime="20191104 13:08:50.084" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Create Some Files">
+<kw name="Create File 1" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+</arguments>
+<assign>
+<var>${file_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.087" level="INFO">${file_path} = Outputs\first_directory</msg>
+<status status="PASS" starttime="20191104 13:08:50.086" endtime="20191104 13:08:50.087"></status>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>{$file_path}</arg>
+<arg>Here are some text from the file</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.089" level="INFO" html="yes">Created file '&lt;a href="file://C:\Development\RobotScripts\OSTest\{$file_path}"&gt;C:\Development\RobotScripts\OSTest\{$file_path}&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20191104 13:08:50.087" endtime="20191104 13:08:50.089"></status>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${file_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.089" level="INFO" html="yes">Path '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\first_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\first_directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.089" endtime="20191104 13:08:50.089"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.086" endtime="20191104 13:08:50.090"></status>
+</kw>
+<kw name="Create File 2" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+</arguments>
+<assign>
+<var>${file_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.091" level="INFO">${file_path} = Outputs\second_directory</msg>
+<status status="PASS" starttime="20191104 13:08:50.090" endtime="20191104 13:08:50.091"></status>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>{$file_path}</arg>
+<arg>Here are some text from the file 2</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.092" level="INFO" html="yes">Created file '&lt;a href="file://C:\Development\RobotScripts\OSTest\{$file_path}"&gt;C:\Development\RobotScripts\OSTest\{$file_path}&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20191104 13:08:50.091" endtime="20191104 13:08:50.092"></status>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${file_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.093" level="INFO" html="yes">Path '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\second_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\second_directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.092" endtime="20191104 13:08:50.093"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.090" endtime="20191104 13:08:50.093"></status>
+</kw>
+<kw name="Create File 3" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_3}</arg>
+</arguments>
+<assign>
+<var>${file_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.094" level="INFO">${file_path} = Outputs\third_directory</msg>
+<status status="PASS" starttime="20191104 13:08:50.094" endtime="20191104 13:08:50.094"></status>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>{$file_path}</arg>
+<arg>Here are some text from the file 3</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.096" level="INFO" html="yes">Created file '&lt;a href="file://C:\Development\RobotScripts\OSTest\{$file_path}"&gt;C:\Development\RobotScripts\OSTest\{$file_path}&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20191104 13:08:50.095" endtime="20191104 13:08:50.096"></status>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${file_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.096" level="INFO" html="yes">Path '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\third_directory"&gt;C:\Development\RobotScripts\OSTest\Outputs\third_directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20191104 13:08:50.096" endtime="20191104 13:08:50.097"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.094" endtime="20191104 13:08:50.097"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.085" endtime="20191104 13:08:50.097" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="Move a File">
+<kw name="Move File 3 From Directory 3 to Directory 2" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_3}</arg>
+<arg>${file_3}</arg>
+</arguments>
+<assign>
+<var>${source_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.100" level="INFO">${source_path} = Outputs\third_directory\third_file.txt</msg>
+<status status="PASS" starttime="20191104 13:08:50.099" endtime="20191104 13:08:50.100"></status>
+</kw>
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_3}</arg>
+</arguments>
+<assign>
+<var>${target_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.100" level="INFO">${target_path} = Outputs\second_directory\third_file.txt</msg>
+<status status="PASS" starttime="20191104 13:08:50.100" endtime="20191104 13:08:50.100"></status>
+</kw>
+<kw name="Move File" library="OperatingSystem">
+<doc>Moves the source file into the destination.</doc>
+<arguments>
+<arg>${source_path}</arg>
+<arg>${target_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.102" level="FAIL">Source file 'C:\Development\RobotScripts\OSTest\Outputs\third_directory\third_file.txt' does not exist.</msg>
+<status status="FAIL" starttime="20191104 13:08:50.100" endtime="20191104 13:08:50.102"></status>
+</kw>
+<status status="FAIL" starttime="20191104 13:08:50.099" endtime="20191104 13:08:50.103"></status>
+</kw>
+<status status="FAIL" starttime="20191104 13:08:50.098" endtime="20191104 13:08:50.103" critical="yes">Source file 'C:\Development\RobotScripts\OSTest\Outputs\third_directory\third_file.txt' does not exist.</status>
+</test>
+<test id="s1-s1-t4" name="Copy a File">
+<kw name="Copy File 1 From Directory 1 to Directory 2" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<arg>${file_1}</arg>
+</arguments>
+<assign>
+<var>${source_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.107" level="INFO">${source_path} = Outputs\first_directory\first_file.txt</msg>
+<status status="PASS" starttime="20191104 13:08:50.107" endtime="20191104 13:08:50.107"></status>
+</kw>
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_1}</arg>
+</arguments>
+<assign>
+<var>${target_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.107" level="INFO">${target_path} = Outputs\second_directory\first_file.txt</msg>
+<status status="PASS" starttime="20191104 13:08:50.107" endtime="20191104 13:08:50.107"></status>
+</kw>
+<kw name="Copy File" library="OperatingSystem">
+<doc>Copies the source file into the destination.</doc>
+<arguments>
+<arg>${source_path}</arg>
+<arg>${target_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.108" level="FAIL">Source file 'C:\Development\RobotScripts\OSTest\Outputs\first_directory\first_file.txt' does not exist.</msg>
+<status status="FAIL" starttime="20191104 13:08:50.108" endtime="20191104 13:08:50.108"></status>
+</kw>
+<status status="FAIL" starttime="20191104 13:08:50.106" endtime="20191104 13:08:50.108"></status>
+</kw>
+<status status="FAIL" starttime="20191104 13:08:50.106" endtime="20191104 13:08:50.109" critical="yes">Source file 'C:\Development\RobotScripts\OSTest\Outputs\first_directory\first_file.txt' does not exist.</status>
+</test>
+<test id="s1-s1-t5" name="Delete a File">
+<kw name="Remove File 1 From Directory 1" library="OSTestingApp">
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<arg>${file_1}</arg>
+</arguments>
+<assign>
+<var>${source_path}</var>
+</assign>
+<msg timestamp="20191104 13:08:50.111" level="INFO">${source_path} = Outputs\first_directory\first_file.txt</msg>
+<status status="PASS" starttime="20191104 13:08:50.111" endtime="20191104 13:08:50.111"></status>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${source_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.112" level="INFO" html="yes">File '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\first_directory\first_file.txt"&gt;C:\Development\RobotScripts\OSTest\Outputs\first_directory\first_file.txt&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20191104 13:08:50.112" endtime="20191104 13:08:50.112"></status>
+</kw>
+<kw name="Should Not Exist" library="OperatingSystem">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${source_path}</arg>
+</arguments>
+<msg timestamp="20191104 13:08:50.113" level="INFO" html="yes">Path '&lt;a href="file://C:\Development\RobotScripts\OSTest\Outputs\first_directory\first_file.txt"&gt;C:\Development\RobotScripts\OSTest\Outputs\first_directory\first_file.txt&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20191104 13:08:50.112" endtime="20191104 13:08:50.113"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.111" endtime="20191104 13:08:50.113"></status>
+</kw>
+<status status="PASS" starttime="20191104 13:08:50.110" endtime="20191104 13:08:50.114" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20191104 13:08:50.056" endtime="20191104 13:08:50.115"></status>
+</suite>
+<status status="FAIL" starttime="20191104 13:08:50.024" endtime="20191104 13:08:50.118"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="2">Critical Tests</stat>
+<stat pass="3" fail="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="2" id="s1" name="Tests">Tests</stat>
+<stat pass="3" fail="2" id="s1-s1" name="OSTesting">Tests.OSTesting</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
