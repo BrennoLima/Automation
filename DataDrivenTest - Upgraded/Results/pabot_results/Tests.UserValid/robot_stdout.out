@@ -1,0 +1,23 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.UserValid                                                               
+==============================================================================
+Valid users should be able to login                                   | FAIL |
+Setup failed:
+SessionNotCreatedException: Message: session not created
+from chrome not reachable
+  (Session info: chrome=78.0.3904.70)
+------------------------------------------------------------------------------
+User should be able to search for a car                               | FAIL |
+Execution terminated by signal
+------------------------------------------------------------------------------
+Tests.UserValid                                                       | FAIL |
+2 critical tests, 0 passed, 2 failed
+2 tests total, 0 passed, 2 failed
+==============================================================================
+Tests                                                                 | FAIL |
+2 critical tests, 0 passed, 2 failed
+2 tests total, 0 passed, 2 failed
+==============================================================================
+Output:  C:\Development\RobotScripts\DataDrivenTest - Upgraded\Results\pabot_results\Tests.UserValid\output.xml

@@ -1,0 +1,23 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.UserInvalid                                                             
+==============================================================================
+Invalid Login Scenarios Should Display Correct Error Message          | FAIL |
+Several failures occurred:
+
+1) WebDriverException: Message: chrome not reachable
+  (Session info: chrome=78.0.3904.70)
+
+
+2) Execution terminated by signal
+------------------------------------------------------------------------------
+Tests.UserInvalid                                                     | FAIL |
+1 critical test, 0 passed, 1 failed
+1 test total, 0 passed, 1 failed
+==============================================================================
+Tests                                                                 | FAIL |
+1 critical test, 0 passed, 1 failed
+1 test total, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Development\RobotScripts\DataDrivenTest - Upgraded\Results\pabot_results\Tests.UserInvalid\output.xml
