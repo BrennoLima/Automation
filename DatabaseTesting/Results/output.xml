@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191104 12:15:26.312" rpa="false">
+<suite id="s1" name="Tests" source="C:\Development\RobotScripts\DatabaseTesting\tests">
+<suite id="s1-s1" name="DatabaseTest" source="C:\Development\RobotScripts\DatabaseTesting\tests\DatabaseTest.robot">
+<kw name="Connect" library="Common" type="setup">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<arguments>
+<arg>pymysql</arg>
+<arg>${DB_NAME}</arg>
+<arg>${DB_USER_NAME}</arg>
+<arg>${DB_USER_PASSWORD}</arg>
+<arg>${DB_HOST}</arg>
+<arg>${DB_PORT}</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.391" level="INFO">Connecting using : pymysql.connect(db=Users, user=root, passwd=brenno012394, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20191104 12:15:26.376" endtime="20191104 12:15:26.402"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.376" endtime="20191104 12:15:26.402"></status>
+</kw>
+<test id="s1-s1-t1" name="Clean Table">
+<kw name="Delete All Rows From Table" library="DatabaseLibrary">
+<doc>Delete all the rows within a given table. Set optional input `sansTran` to True to run command without an
+explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.403" level="INFO">Executing : Delete All Rows From Table  |  DELETE FROM Students; </msg>
+<status status="PASS" starttime="20191104 12:15:26.402" endtime="20191104 12:15:26.409"></status>
+</kw>
+<kw name="Check Empty Table" library="SQL_Server">
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<kw name="Row Count Is Equal To X" library="DatabaseLibrary">
+<doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
+will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
+transaction commit or rollback.</doc>
+<arguments>
+<arg>select * from ${TABLE_NAME}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.411" level="INFO">Executing : Row Count Is Equal To X  |  select * from Students  |  0 </msg>
+<msg timestamp="20191104 12:15:26.411" level="INFO">Executing : Row Count  |  select * from Students </msg>
+<status status="PASS" starttime="20191104 12:15:26.410" endtime="20191104 12:15:26.411"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.410" endtime="20191104 12:15:26.411"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.402" endtime="20191104 12:15:26.412" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Insert a Record">
+<kw name="Save Current Row Count" library="SQL_Server">
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<kw name="Row Count" library="DatabaseLibrary">
+<doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
+optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>SELECT * FROM ${TABLE_NAME}</arg>
+</arguments>
+<assign>
+<var>${current_row}</var>
+</assign>
+<msg timestamp="20191104 12:15:26.414" level="INFO">Executing : Row Count  |  SELECT * FROM Students </msg>
+<msg timestamp="20191104 12:15:26.415" level="INFO">${current_row} = 0</msg>
+<status status="PASS" starttime="20191104 12:15:26.414" endtime="20191104 12:15:26.415"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${previous_row}</arg>
+<arg>${current_row}</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.415" level="INFO">${previous_row} = 0</msg>
+<status status="PASS" starttime="20191104 12:15:26.415" endtime="20191104 12:15:26.415"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.413" endtime="20191104 12:15:26.415"></status>
+</kw>
+<kw name="Insert Data" library="SQL_Server">
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>INSERT INTO ${TABLE_NAME} VALUES(${ID}, '${FIRST_NAME}', '${LAST_NAME}', ${AGE});</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.417" level="INFO">Executing : Execute SQL String  |  INSERT INTO Students VALUES(101010, 'Brenno', 'Lima', 22); </msg>
+<status status="PASS" starttime="20191104 12:15:26.416" endtime="20191104 12:15:26.422"></status>
+</kw>
+<kw name="Save" library="SQL_Server">
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>commit;</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.423" level="INFO">Executing : Execute SQL String  |  commit; </msg>
+<status status="PASS" starttime="20191104 12:15:26.423" endtime="20191104 12:15:26.424"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.423" endtime="20191104 12:15:26.424"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.416" endtime="20191104 12:15:26.424"></status>
+</kw>
+<kw name="Check Number of Rows" library="SQL_Server">
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<kw name="Row Count" library="DatabaseLibrary">
+<doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
+optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>SELECT * FROM ${TABLE_NAME}</arg>
+</arguments>
+<assign>
+<var>${new_row_count}</var>
+</assign>
+<msg timestamp="20191104 12:15:26.425" level="INFO">Executing : Row Count  |  SELECT * FROM Students </msg>
+<msg timestamp="20191104 12:15:26.426" level="INFO">${new_row_count} = 1</msg>
+<status status="PASS" starttime="20191104 12:15:26.425" endtime="20191104 12:15:26.426"></status>
+</kw>
+<kw name="Should Not Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to real numbers.</doc>
+<arguments>
+<arg>${new_row_count}</arg>
+<arg>${previous_row}</arg>
+</arguments>
+<status status="PASS" starttime="20191104 12:15:26.426" endtime="20191104 12:15:26.427"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.425" endtime="20191104 12:15:26.427"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.413" endtime="20191104 12:15:26.427" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="Log Specific Row">
+<kw name="Search Data" library="SQL_Server">
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<kw name="Query" library="DatabaseLibrary">
+<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
+input `sansTran` to True to run command without an explicit transaction commit or rollback.
+Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
+<arguments>
+<arg>SELECT * FROM ${TABLE_NAME} WHERE ID = ${ID}</arg>
+</arguments>
+<assign>
+<var>${query_result}</var>
+</assign>
+<msg timestamp="20191104 12:15:26.430" level="INFO">Executing : Query  |  SELECT * FROM Students WHERE ID = 101010 </msg>
+<msg timestamp="20191104 12:15:26.431" level="INFO">${query_result} = ((Decimal('101010'), 'Brenno', 'Lima', Decimal('22')),)</msg>
+<status status="PASS" starttime="20191104 12:15:26.430" endtime="20191104 12:15:26.431"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${query_result}</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.431" level="INFO">((Decimal('101010'), 'Brenno', 'Lima', Decimal('22')),)</msg>
+<status status="PASS" starttime="20191104 12:15:26.431" endtime="20191104 12:15:26.431"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.429" endtime="20191104 12:15:26.431"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.429" endtime="20191104 12:15:26.431" critical="yes"></status>
+</test>
+<test id="s1-s1-t4" name="Delete a Record">
+<kw name="Save Current Row Count" library="SQL_Server">
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<kw name="Row Count" library="DatabaseLibrary">
+<doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
+optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>SELECT * FROM ${TABLE_NAME}</arg>
+</arguments>
+<assign>
+<var>${current_row}</var>
+</assign>
+<msg timestamp="20191104 12:15:26.433" level="INFO">Executing : Row Count  |  SELECT * FROM Students </msg>
+<msg timestamp="20191104 12:15:26.434" level="INFO">${current_row} = 1</msg>
+<status status="PASS" starttime="20191104 12:15:26.433" endtime="20191104 12:15:26.434"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${previous_row}</arg>
+<arg>${current_row}</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.434" level="INFO">${previous_row} = 1</msg>
+<status status="PASS" starttime="20191104 12:15:26.434" endtime="20191104 12:15:26.434"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.433" endtime="20191104 12:15:26.434"></status>
+</kw>
+<kw name="Delete Data" library="SQL_Server">
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>DELETE FROM ${TABLE_NAME} WHERE FIRST_NAME = '${FIRST_NAME}';</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.435" level="INFO">Executing : Execute SQL String  |  DELETE FROM Students WHERE FIRST_NAME = 'Brenno'; </msg>
+<status status="PASS" starttime="20191104 12:15:26.435" endtime="20191104 12:15:26.438"></status>
+</kw>
+<kw name="Save" library="SQL_Server">
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>commit;</arg>
+</arguments>
+<msg timestamp="20191104 12:15:26.438" level="INFO">Executing : Execute SQL String  |  commit; </msg>
+<status status="PASS" starttime="20191104 12:15:26.438" endtime="20191104 12:15:26.439"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.438" endtime="20191104 12:15:26.439"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.434" endtime="20191104 12:15:26.439"></status>
+</kw>
+<kw name="Check Number of Rows" library="SQL_Server">
+<arguments>
+<arg>${TABLE_NAME}</arg>
+</arguments>
+<kw name="Row Count" library="DatabaseLibrary">
+<doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
+optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>SELECT * FROM ${TABLE_NAME}</arg>
+</arguments>
+<assign>
+<var>${new_row_count}</var>
+</assign>
+<msg timestamp="20191104 12:15:26.439" level="INFO">Executing : Row Count  |  SELECT * FROM Students </msg>
+<msg timestamp="20191104 12:15:26.440" level="INFO">${new_row_count} = 0</msg>
+<status status="PASS" starttime="20191104 12:15:26.439" endtime="20191104 12:15:26.440"></status>
+</kw>
+<kw name="Should Not Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to real numbers.</doc>
+<arguments>
+<arg>${new_row_count}</arg>
+<arg>${previous_row}</arg>
+</arguments>
+<status status="PASS" starttime="20191104 12:15:26.440" endtime="20191104 12:15:26.441"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.439" endtime="20191104 12:15:26.441"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.432" endtime="20191104 12:15:26.441" critical="yes"></status>
+</test>
+<kw name="Disconnect" library="Common" type="teardown">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20191104 12:15:26.442" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20191104 12:15:26.442" endtime="20191104 12:15:26.442"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.442" endtime="20191104 12:15:26.443"></status>
+</kw>
+<status status="PASS" starttime="20191104 12:15:26.335" endtime="20191104 12:15:26.443"></status>
+</suite>
+<status status="PASS" starttime="20191104 12:15:26.313" endtime="20191104 12:15:26.444"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="4" fail="0" id="s1-s1" name="DatabaseTest">Tests.DatabaseTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
